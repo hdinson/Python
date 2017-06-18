@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>socket简介 · 我的第一本電子書</title>
+        <title>Socket简介 · 我的第一本電子書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -2042,7 +2042,7 @@
                 <a href="tcpipjian-jie.html">
             
                     
-                    tcp/ip简介
+                    Tcp/Ip简介
             
                 </a>
             
@@ -2081,7 +2081,7 @@
                 <a href="socketjian-jie.html">
             
                     
-                    socket简介
+                    Socket简介
             
                 </a>
             
@@ -2191,7 +2191,7 @@
                 <a href="echofu-wu-qi.html">
             
                     
-                    echo服务器
+                    Echo服务器
             
                 </a>
             
@@ -2238,19 +2238,6 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.11" data-path="udpguang-bo.html">
-            
-                <a href="udpguang-bo.html">
-            
-                    
-                    UDP广播
-            
-                </a>
-            
-
-            
-        </li>
-    
 
             </ul>
             
@@ -2275,7 +2262,7 @@
                 <a href="wiresharkzhua-bao-gong-ju-shi-yong.html">
             
                     
-                    wireshark抓包工具使用
+                    Wireshark抓包工具使用
             
                 </a>
             
@@ -2456,7 +2443,7 @@
                 <a href="san-ci-wo-shou-3001-si-ci-hui-shou-3001-shi-zhong-zhuang-tai.html">
             
                     
-                    三次握手、四次挥手、十种状态
+                    握手、挥手、状态
             
                 </a>
             
@@ -2495,7 +2482,7 @@
                 <a href="listende-dui-lie-chang-du.html">
             
                     
-                    listen的队列长度
+                    Listen的队列长度
             
                 </a>
             
@@ -2731,7 +2718,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >socket简介</a>
+        <a href=".." >Socket简介</a>
     </h1>
 </div>
 
@@ -2765,26 +2752,29 @@
 <p>&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x6BCF;&#x5929;&#x6D4F;&#x89C8;&#x7F51;&#x9875;&#x3001;QQ &#x804A;&#x5929;&#x3001;&#x6536;&#x53D1; email &#x7B49;&#x7B49;</p>
 <h2 id="4-&#x521B;&#x5EFA;socket"><a name="4-&#x521B;&#x5EFA;socket" class="anchor-navigation-ex-anchor" href="#4-&#x521B;&#x5EFA;socket"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x521B;&#x5EFA;socket </h2>
 <p>&#x5728; Python &#x4E2D; &#x4F7F;&#x7528;socket &#x6A21;&#x5757;&#x7684;&#x51FD;&#x6570; socket &#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#xFF1A;</p>
-<pre class="language-"><code>socket.socket(AddressFamily, Type)
-</code></pre><h3 id="&#x8BF4;&#x660E;&#xFF1A;"><a name="&#x8BF4;&#x660E;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x8BF4;&#x660E;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BF4;&#x660E;&#xFF1A; </h3>
+<pre class="language-"><code class="lang-py">socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>AddressFamily<span class="token punctuation">,</span> Type<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="&#x8BF4;&#x660E;&#xFF1A;"><a name="&#x8BF4;&#x660E;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x8BF4;&#x660E;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BF4;&#x660E;&#xFF1A; </h3>
 <p>&#x51FD;&#x6570; socket.socket &#x521B;&#x5EFA;&#x4E00;&#x4E2A; socket&#xFF0C;&#x8FD4;&#x56DE;&#x8BE5; socket &#x7684;&#x63CF;&#x8FF0;&#x7B26;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x5E26;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;</p>
 <ul>
 <li>Address Family&#xFF1A;&#x53EF;&#x4EE5;&#x9009;&#x62E9; AF_INET&#xFF08;&#x7528;&#x4E8E; Internet &#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#xFF09; &#x6216;&#x8005; AF_UNIX&#xFF08;&#x7528;&#x4E8E;&#x540C;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#xFF09;,&#x5B9E;&#x9645;&#x5DE5;&#x4F5C;&#x4E2D;&#x5E38;&#x7528;AF_INET</li>
 <li>Type&#xFF1A;&#x5957;&#x63A5;&#x5B57;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x662F; SOCK_STREAM&#xFF08;&#x6D41;&#x5F0F;&#x5957;&#x63A5;&#x5B57;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E; TCP &#x534F;&#x8BAE;&#xFF09;&#x6216;&#x8005; SOCK_DGRAM&#xFF08;&#x6570;&#x636E;&#x62A5;&#x5957;&#x63A5;&#x5B57;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E; UDP &#x534F;&#x8BAE;&#xFF09;</li>
 </ul>
 <p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;tcp socket&#xFF08;tcp&#x5957;&#x63A5;&#x5B57;&#xFF09;</p>
-<pre class="language-"><code>import socket
+<pre class="language-"><code class="lang-py"><span class="token keyword">import</span> socket
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>
 
-print &apos;Socket Created&apos;
-</code></pre><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;udp socket&#xFF08;udp&#x5957;&#x63A5;&#x5B57;&#xFF09;</p>
-<pre class="language-"><code>import socket
-
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-print &apos;Socket Created&apos;
+<span class="token keyword">print</span> <span class="token string">&apos;Socket Created&apos;</span>
 </code></pre>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;udp socket&#xFF08;udp&#x5957;&#x63A5;&#x5B57;&#xFF09;</p>
+<pre class="language-"><code class="lang-py"><span class="token keyword">import</span> socket
+
+s <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_DGRAM<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span> <span class="token string">&apos;Socket Created&apos;</span>
+</code></pre>
+
                                 
                                 </section>
                             
@@ -2823,7 +2813,7 @@ print &apos;Socket Created&apos;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"socket简介","level":"1.3.1.5","depth":3,"next":{"title":"UDP","level":"1.3.2","depth":2,"ref":"","articles":[{"title":"UDP介绍","level":"1.3.2.1","depth":3,"path":"network/udpjie-shao.md","ref":"network/udpjie-shao.md","articles":[]},{"title":"发送数据","level":"1.3.2.2","depth":3,"path":"network/udpwang-luo-cheng-5e8f-fa-song-shu-ju.md","ref":"network/udpwang-luo-cheng-5e8f-fa-song-shu-ju.md","articles":[]},{"title":"发送、接收数据","level":"1.3.2.3","depth":3,"path":"network/fa-song-3001-jie-shou-shu-ju.md","ref":"network/fa-song-3001-jie-shou-shu-ju.md","articles":[]},{"title":"端口问题","level":"1.3.2.4","depth":3,"path":"network/duan-kou-wen-ti.md","ref":"network/duan-kou-wen-ti.md","articles":[]},{"title":"绑定信息","level":"1.3.2.5","depth":3,"path":"network/bang-ding-xin-xi.md","ref":"network/bang-ding-xin-xi.md","articles":[]},{"title":"网络通信过程","level":"1.3.2.6","depth":3,"path":"network/wang-luo-tong-xin-guo-cheng.md","ref":"network/wang-luo-tong-xin-guo-cheng.md","articles":[]},{"title":"echo服务器","level":"1.3.2.7","depth":3,"path":"network/echofu-wu-qi.md","ref":"network/echofu-wu-qi.md","articles":[]},{"title":"聊天室","level":"1.3.2.8","depth":3,"path":"network/liao-tian-shi.md","ref":"network/liao-tian-shi.md","articles":[]},{"title":"UDP广播","level":"1.3.2.9","depth":3,"path":"network/udpguang-bo.md","ref":"network/udpguang-bo.md","articles":[]},{"title":"总结","level":"1.3.2.10","depth":3,"path":"network/zong-jie.md","ref":"network/zong-jie.md","articles":[]},{"title":"UDP广播","level":"1.3.2.11","depth":3,"path":"network/udpguang-bo.md","ref":"network/udpguang-bo.md","articles":[]}]},"previous":{"title":"子关掩码","level":"1.3.1.4","depth":3,"path":"network/zi-guan-yan-ma.md","ref":"network/zi-guan-yan-ma.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex@0.1.8","-sharing","-lunr","-search","search-plus","prism","-highlight","splitter","spoiler","expandable-chapters","book-summary-scroll-position-saver"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"Python"}},"spoiler":{},"book-summary-scroll-position-saver":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"isShowTocTitleIcon":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-3-16-148410-0","variables":{},"title":"我的第一本電子書","language":"zh-tw","links":{"sidebar":{"Home":"http://dinson.win"}},"gitbook":"*","description":"用 GitBook 制作的第一本電子書！","direction":"ltr"},"file":{"path":"network/socketjian-jie.md","mtime":"2017-06-18T17:04:10.298Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-18T17:18:55.261Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Socket简介","level":"1.3.1.5","depth":3,"next":{"title":"UDP","level":"1.3.2","depth":2,"ref":"","articles":[{"title":"UDP介绍","level":"1.3.2.1","depth":3,"path":"network/udpjie-shao.md","ref":"network/udpjie-shao.md","articles":[]},{"title":"发送数据","level":"1.3.2.2","depth":3,"path":"network/udpwang-luo-cheng-5e8f-fa-song-shu-ju.md","ref":"network/udpwang-luo-cheng-5e8f-fa-song-shu-ju.md","articles":[]},{"title":"发送、接收数据","level":"1.3.2.3","depth":3,"path":"network/fa-song-3001-jie-shou-shu-ju.md","ref":"network/fa-song-3001-jie-shou-shu-ju.md","articles":[]},{"title":"端口问题","level":"1.3.2.4","depth":3,"path":"network/duan-kou-wen-ti.md","ref":"network/duan-kou-wen-ti.md","articles":[]},{"title":"绑定信息","level":"1.3.2.5","depth":3,"path":"network/bang-ding-xin-xi.md","ref":"network/bang-ding-xin-xi.md","articles":[]},{"title":"网络通信过程","level":"1.3.2.6","depth":3,"path":"network/wang-luo-tong-xin-guo-cheng.md","ref":"network/wang-luo-tong-xin-guo-cheng.md","articles":[]},{"title":"Echo服务器","level":"1.3.2.7","depth":3,"path":"network/echofu-wu-qi.md","ref":"network/echofu-wu-qi.md","articles":[]},{"title":"聊天室","level":"1.3.2.8","depth":3,"path":"network/liao-tian-shi.md","ref":"network/liao-tian-shi.md","articles":[]},{"title":"UDP广播","level":"1.3.2.9","depth":3,"path":"network/udpguang-bo.md","ref":"network/udpguang-bo.md","articles":[]},{"title":"总结","level":"1.3.2.10","depth":3,"path":"network/zong-jie.md","ref":"network/zong-jie.md","articles":[]}]},"previous":{"title":"子关掩码","level":"1.3.1.4","depth":3,"path":"network/zi-guan-yan-ma.md","ref":"network/zi-guan-yan-ma.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex@0.1.8","-sharing","-lunr","-search","search-plus","prism","-highlight","splitter","spoiler","expandable-chapters","book-summary-scroll-position-saver"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"Python"}},"spoiler":{},"book-summary-scroll-position-saver":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"isShowTocTitleIcon":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-3-16-148410-0","variables":{},"title":"我的第一本電子書","language":"zh-tw","links":{"sidebar":{"Home":"http://dinson.win"}},"gitbook":"*","description":"用 GitBook 制作的第一本電子書！","direction":"ltr"},"file":{"path":"network/socketjian-jie.md","mtime":"2017-06-18T17:36:51.493Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-18T17:37:47.433Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

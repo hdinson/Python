@@ -2044,7 +2044,7 @@
                 <a href="tcpipjian-jie.html">
             
                     
-                    tcp/ip简介
+                    Tcp/Ip简介
             
                 </a>
             
@@ -2083,7 +2083,7 @@
                 <a href="socketjian-jie.html">
             
                     
-                    socket简介
+                    Socket简介
             
                 </a>
             
@@ -2193,7 +2193,7 @@
                 <a href="echofu-wu-qi.html">
             
                     
-                    echo服务器
+                    Echo服务器
             
                 </a>
             
@@ -2240,19 +2240,6 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.11" data-path="udpguang-bo.html">
-            
-                <a href="udpguang-bo.html">
-            
-                    
-                    UDP广播
-            
-                </a>
-            
-
-            
-        </li>
-    
 
             </ul>
             
@@ -2277,7 +2264,7 @@
                 <a href="wiresharkzhua-bao-gong-ju-shi-yong.html">
             
                     
-                    wireshark抓包工具使用
+                    Wireshark抓包工具使用
             
                 </a>
             
@@ -2458,7 +2445,7 @@
                 <a href="san-ci-wo-shou-3001-si-ci-hui-shou-3001-shi-zhong-zhuang-tai.html">
             
                     
-                    三次握手、四次挥手、十种状态
+                    握手、挥手、状态
             
                 </a>
             
@@ -2497,7 +2484,7 @@
                 <a href="listende-dui-lie-chang-du.html">
             
                     
-                    listen的队列长度
+                    Listen的队列长度
             
                 </a>
             
@@ -2754,136 +2741,138 @@
 <p>&#x8FD9;&#x4E9B;&#x8BBE;&#x5907;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x88AB;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x7136;&#x540E;select&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x904D;&#x5386;&#x8FD9;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x4E8E;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x53EF;&#x8BFB;&#x5219;&#x4F1A;&#x8FD4;&#x56DE;&#x6539;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x3002;&#x5F53;&#x904D;&#x5386;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x4ECD;&#x7136;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x53EF;&#x7528;&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF0C;select&#x8BA9;&#x7528;&#x6237;&#x8FDB;&#x7A0B;&#x5219;&#x4F1A;&#x7761;&#x7720;&#xFF0C;&#x76F4;&#x5230;&#x7B49;&#x5F85;&#x8D44;&#x6E90;&#x53EF;&#x7528;&#x7684;&#x65F6;&#x5019;&#x5728;&#x5524;&#x9192;&#xFF0C;&#x904D;&#x5386;&#x4E4B;&#x524D;&#x90A3;&#x4E2A;&#x76D1;&#x89C6;&#x7684;&#x6570;&#x7EC4;&#x3002;&#x6BCF;&#x6B21;&#x904D;&#x5386;&#x90FD;&#x662F;&#x4F9D;&#x6B21;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#x7684;&#x3002;</p>
 <h2 id="2-select-&#x56DE;&#x663E;&#x670D;&#x52A1;&#x5668;"><a name="2-select-&#x56DE;&#x663E;&#x670D;&#x52A1;&#x5668;" class="anchor-navigation-ex-anchor" href="#2-select-&#x56DE;&#x663E;&#x670D;&#x52A1;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>2. select &#x56DE;&#x663E;&#x670D;&#x52A1;&#x5668; </h2>
 <p>&#x4F7F;&#x7528;python&#x7684;select&#x6A21;&#x5757;&#x5F88;&#x5BB9;&#x6613;&#x5199;&#x51FA;&#x4E0B;&#x9762;&#x4E00;&#x4E2A;echo(&#x56DE;&#x663E;)&#x670D;&#x52A1;&#x5668;&#xFF1A;</p>
-<pre class="language-"><code>import select
-import socket
-import sys
+<pre class="language-"><code class="lang-py"><span class="token keyword">import</span> select
+<span class="token keyword">import</span> socket
+<span class="token keyword">import</span> sys
 
 
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind((&apos;&apos;, 7788))
-server.listen(5)
+server <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>
+server<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&apos;&apos;</span><span class="token punctuation">,</span> <span class="token number">7788</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+server<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
 
-inputs = [server, sys.stdin]
+inputs <span class="token operator">=</span> <span class="token punctuation">[</span>server<span class="token punctuation">,</span> sys<span class="token punctuation">.</span>stdin<span class="token punctuation">]</span>
 
-running = True
+running <span class="token operator">=</span> <span class="token boolean">True</span>
 
-while True:
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
 
-    # &#x8C03;&#x7528; select &#x51FD;&#x6570;&#xFF0C;&#x963B;&#x585E;&#x7B49;&#x5F85;
-    readable, writeable, exceptional = select.select(inputs, [], [])
+    <span class="token comment" spellcheck="true"># &#x8C03;&#x7528; select &#x51FD;&#x6570;&#xFF0C;&#x963B;&#x585E;&#x7B49;&#x5F85;</span>
+    readable<span class="token punctuation">,</span> writeable<span class="token punctuation">,</span> exceptional <span class="token operator">=</span> select<span class="token punctuation">.</span>select<span class="token punctuation">(</span>inputs<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-    # &#x6570;&#x636E;&#x62B5;&#x8FBE;&#xFF0C;&#x5FAA;&#x73AF;
-    for sock in readable:
+    <span class="token comment" spellcheck="true"># &#x6570;&#x636E;&#x62B5;&#x8FBE;&#xFF0C;&#x5FAA;&#x73AF;</span>
+    <span class="token keyword">for</span> sock <span class="token keyword">in</span> readable<span class="token punctuation">:</span>
 
-        # &#x76D1;&#x542C;&#x5230;&#x6709;&#x65B0;&#x7684;&#x8FDE;&#x63A5;
-        if sock == server:
-            conn, addr = server.accept()
-            # select &#x76D1;&#x542C;&#x7684;socket
-            inputs.append(conn)
+        <span class="token comment" spellcheck="true"># &#x76D1;&#x542C;&#x5230;&#x6709;&#x65B0;&#x7684;&#x8FDE;&#x63A5;</span>
+        <span class="token keyword">if</span> sock <span class="token operator">==</span> server<span class="token punctuation">:</span>
+            conn<span class="token punctuation">,</span> addr <span class="token operator">=</span> server<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># select &#x76D1;&#x542C;&#x7684;socket</span>
+            inputs<span class="token punctuation">.</span>append<span class="token punctuation">(</span>conn<span class="token punctuation">)</span>
 
-        # &#x76D1;&#x542C;&#x5230;&#x952E;&#x76D8;&#x6709;&#x8F93;&#x5165;
-        elif sock == sys.stdin:
-            cmd = sys.stdin.readline()
-            running = False
-            break
+        <span class="token comment" spellcheck="true"># &#x76D1;&#x542C;&#x5230;&#x952E;&#x76D8;&#x6709;&#x8F93;&#x5165;</span>
+        <span class="token keyword">elif</span> sock <span class="token operator">==</span> sys<span class="token punctuation">.</span>stdin<span class="token punctuation">:</span>
+            cmd <span class="token operator">=</span> sys<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            running <span class="token operator">=</span> <span class="token boolean">False</span>
+            <span class="token keyword">break</span>
 
-        # &#x6709;&#x6570;&#x636E;&#x5230;&#x8FBE;
-        else:
-            # &#x8BFB;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;
-            data = sock.recv(1024)
-            if data:
-                sock.send(data)
-            else:
-                # &#x79FB;&#x9664;select&#x76D1;&#x542C;&#x7684;socket
-                inputs.remove(sock)
-                sock.close()
+        <span class="token comment" spellcheck="true"># &#x6709;&#x6570;&#x636E;&#x5230;&#x8FBE;</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># &#x8BFB;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;</span>
+            data <span class="token operator">=</span> sock<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> data<span class="token punctuation">:</span>
+                sock<span class="token punctuation">.</span>send<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># &#x79FB;&#x9664;select&#x76D1;&#x542C;&#x7684;socket</span>
+                inputs<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>sock<span class="token punctuation">)</span>
+                sock<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-    # &#x5982;&#x679C;&#x68C0;&#x6D4B;&#x5230;&#x7528;&#x6237;&#x8F93;&#x5165;&#x6572;&#x51FB;&#x952E;&#x76D8;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x9000;&#x51FA;
-    if not running:
-        break
+    <span class="token comment" spellcheck="true"># &#x5982;&#x679C;&#x68C0;&#x6D4B;&#x5230;&#x7528;&#x6237;&#x8F93;&#x5165;&#x6572;&#x51FB;&#x952E;&#x76D8;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x9000;&#x51FA;</span>
+    <span class="token keyword">if</span> <span class="token operator">not</span> running<span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
 
-server.close()
-</code></pre><p>&#x5728;windows&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x2018;&#x7F51;&#x7EDC;&#x8C03;&#x8BD5;&#x52A9;&#x624B;&#x2019;&#xFF0C;&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;&#x5373;&#x53EF;&#x6D4B;&#x8BD5;</p>
+server<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5728;windows&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x2018;&#x7F51;&#x7EDC;&#x8C03;&#x8BD5;&#x52A9;&#x624B;&#x2019;&#xFF0C;&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;&#x5373;&#x53EF;&#x6D4B;&#x8BD5;</p>
 <p><img src="../assets/303.png" alt=""></p>
 <h2 id="&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x5305;&#x542B;writelist&#xFF09;"><a name="&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x5305;&#x542B;writelist&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x5305;&#x542B;writelist&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x5305;&#x542B;writeList&#xFF09;: </h2>
-<pre class="language-"><code>#coding=utf-8
-import socket  
-import Queue
-from select import select  
+<pre class="language-"><code class="lang-py"><span class="token comment" spellcheck="true">#coding=utf-8</span>
+<span class="token keyword">import</span> socket  
+<span class="token keyword">import</span> Queue
+<span class="token keyword">from</span> select <span class="token keyword">import</span> select  
 
-SERVER_IP = (&apos;&apos;, 9999)  
+SERVER_IP <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">&apos;&apos;</span><span class="token punctuation">,</span> <span class="token number">9999</span><span class="token punctuation">)</span>  
 
-# &#x4FDD;&#x5B58;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x8FC7;&#x6765;&#x7684;&#x6D88;&#x606F;,&#x5C06;&#x6D88;&#x606F;&#x653E;&#x5165;&#x961F;&#x5217;&#x4E2D;  
-message_queue = {}  
-input_list = []  
-output_list = []  
+<span class="token comment" spellcheck="true"># &#x4FDD;&#x5B58;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x8FC7;&#x6765;&#x7684;&#x6D88;&#x606F;,&#x5C06;&#x6D88;&#x606F;&#x653E;&#x5165;&#x961F;&#x5217;&#x4E2D;  </span>
+message_queue <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>  
+input_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  
+output_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  
 
-if __name__ == &quot;__main__&quot;:  
-    server = socket.socket()  
-    server.bind(SERVER_IP)  
-    server.listen(10)  
-    # &#x8BBE;&#x7F6E;&#x4E3A;&#x975E;&#x963B;&#x585E;  
-    server.setblocking(False)  
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&quot;__main__&quot;</span><span class="token punctuation">:</span>  
+    server <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+    server<span class="token punctuation">.</span>bind<span class="token punctuation">(</span>SERVER_IP<span class="token punctuation">)</span>  
+    server<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>  
+    <span class="token comment" spellcheck="true"># &#x8BBE;&#x7F6E;&#x4E3A;&#x975E;&#x963B;&#x585E;  </span>
+    server<span class="token punctuation">.</span>setblocking<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>  
 
-    # &#x521D;&#x59CB;&#x5316;&#x5C06;&#x670D;&#x52A1;&#x7AEF;&#x52A0;&#x5165;&#x76D1;&#x542C;&#x5217;&#x8868;  
-    input_list.append(server)  
+    <span class="token comment" spellcheck="true"># &#x521D;&#x59CB;&#x5316;&#x5C06;&#x670D;&#x52A1;&#x7AEF;&#x52A0;&#x5165;&#x76D1;&#x542C;&#x5217;&#x8868;  </span>
+    input_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>server<span class="token punctuation">)</span>  
 
-    while True:  
-        # &#x5F00;&#x59CB; select &#x76D1;&#x542C;,&#x5BF9;input_list&#x4E2D;&#x7684;&#x670D;&#x52A1;&#x7AEF;server&#x8FDB;&#x884C;&#x76D1;&#x542C;  
-        stdinput, stdoutput, stderr = select(input_list, output_list, input_list)  
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>  
+        <span class="token comment" spellcheck="true"># &#x5F00;&#x59CB; select &#x76D1;&#x542C;,&#x5BF9;input_list&#x4E2D;&#x7684;&#x670D;&#x52A1;&#x7AEF;server&#x8FDB;&#x884C;&#x76D1;&#x542C;  </span>
+        stdinput<span class="token punctuation">,</span> stdoutput<span class="token punctuation">,</span> stderr <span class="token operator">=</span> select<span class="token punctuation">(</span>input_list<span class="token punctuation">,</span> output_list<span class="token punctuation">,</span> input_list<span class="token punctuation">)</span>  
 
-        # &#x5FAA;&#x73AF;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8FDB;&#x6765;,&#x5F53;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8FDB;&#x6765;&#x65F6;select&#x5C06;&#x89E6;&#x53D1;  
-        for obj in stdinput:  
-            # &#x5224;&#x65AD;&#x5F53;&#x524D;&#x89E6;&#x53D1;&#x7684;&#x662F;&#x4E0D;&#x662F;&#x670D;&#x52A1;&#x7AEF;&#x5BF9;&#x8C61;, &#x5F53;&#x89E6;&#x53D1;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x670D;&#x52A1;&#x7AEF;&#x5BF9;&#x8C61;&#x65F6;,&#x8BF4;&#x660E;&#x6709;&#x65B0;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8FDB;&#x6765;&#x4E86;  
-            if obj == server:  
-                # &#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8FDE;&#x63A5;, &#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x5730;&#x5740;&#x4FE1;&#x606F;  
-                conn, addr = server.accept()  
-                print(&quot;Client %s connected! &quot;%str(addr))  
-                # &#x5C06;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x4E5F;&#x52A0;&#x5165;&#x5230;&#x76D1;&#x542C;&#x7684;&#x5217;&#x8868;&#x4E2D;, &#x5F53;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6; select &#x5C06;&#x89E6;&#x53D1;  
-                input_list.append(conn)  
-                # &#x4E3A;&#x8FDE;&#x63A5;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x5355;&#x72EC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;  
-                message_queue[conn] = Queue.Queue()  
+        <span class="token comment" spellcheck="true"># &#x5FAA;&#x73AF;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8FDB;&#x6765;,&#x5F53;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8FDB;&#x6765;&#x65F6;select&#x5C06;&#x89E6;&#x53D1;  </span>
+        <span class="token keyword">for</span> obj <span class="token keyword">in</span> stdinput<span class="token punctuation">:</span>  
+            <span class="token comment" spellcheck="true"># &#x5224;&#x65AD;&#x5F53;&#x524D;&#x89E6;&#x53D1;&#x7684;&#x662F;&#x4E0D;&#x662F;&#x670D;&#x52A1;&#x7AEF;&#x5BF9;&#x8C61;, &#x5F53;&#x89E6;&#x53D1;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x670D;&#x52A1;&#x7AEF;&#x5BF9;&#x8C61;&#x65F6;,&#x8BF4;&#x660E;&#x6709;&#x65B0;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8FDB;&#x6765;&#x4E86;  </span>
+            <span class="token keyword">if</span> obj <span class="token operator">==</span> server<span class="token punctuation">:</span>  
+                <span class="token comment" spellcheck="true"># &#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8FDE;&#x63A5;, &#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x5730;&#x5740;&#x4FE1;&#x606F;  </span>
+                conn<span class="token punctuation">,</span> addr <span class="token operator">=</span> server<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Client %s connected! &quot;</span><span class="token operator">%</span>str<span class="token punctuation">(</span>addr<span class="token punctuation">)</span><span class="token punctuation">)</span>  
+                <span class="token comment" spellcheck="true"># &#x5C06;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x4E5F;&#x52A0;&#x5165;&#x5230;&#x76D1;&#x542C;&#x7684;&#x5217;&#x8868;&#x4E2D;, &#x5F53;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6; select &#x5C06;&#x89E6;&#x53D1;  </span>
+                input_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>conn<span class="token punctuation">)</span>  
+                <span class="token comment" spellcheck="true"># &#x4E3A;&#x8FDE;&#x63A5;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x5355;&#x72EC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;  </span>
+                message_queue<span class="token punctuation">[</span>conn<span class="token punctuation">]</span> <span class="token operator">=</span> Queue<span class="token punctuation">.</span>Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>  
 
-            else:  
-                # &#x7531;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8FDB;&#x6765;&#x65F6;&#x670D;&#x52A1;&#x7AEF;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#xFF0C;&#x5C06;&#x5BA2;&#x6237;&#x7AEF;&#x52A0;&#x5165;&#x5230;&#x4E86;&#x76D1;&#x542C;&#x5217;&#x8868;&#x4E2D;(input_list)&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x5C06;&#x89E6;&#x53D1;  
-                # &#x6240;&#x4EE5;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x89E6;&#x53D1;  
-                try:  
-                    recv_data = obj.recv(1024)  
-                    # &#x5BA2;&#x6237;&#x7AEF;&#x672A;&#x65AD;&#x5F00;  
-                    if recv_data:  
-                        print(&quot;received %s from client %s&quot;%(recv_data, str(addr)))  
-                        # &#x5C06;&#x6536;&#x5230;&#x7684;&#x6D88;&#x606F;&#x653E;&#x5165;&#x5230;&#x5404;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;  
-                        message_queue[obj].put(recv_data)  
+            <span class="token keyword">else</span><span class="token punctuation">:</span>  
+                <span class="token comment" spellcheck="true"># &#x7531;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8FDB;&#x6765;&#x65F6;&#x670D;&#x52A1;&#x7AEF;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#xFF0C;&#x5C06;&#x5BA2;&#x6237;&#x7AEF;&#x52A0;&#x5165;&#x5230;&#x4E86;&#x76D1;&#x542C;&#x5217;&#x8868;&#x4E2D;(input_list)&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x5C06;&#x89E6;&#x53D1;  </span>
+                <span class="token comment" spellcheck="true"># &#x6240;&#x4EE5;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x89E6;&#x53D1;  </span>
+                <span class="token keyword">try</span><span class="token punctuation">:</span>  
+                    recv_data <span class="token operator">=</span> obj<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>  
+                    <span class="token comment" spellcheck="true"># &#x5BA2;&#x6237;&#x7AEF;&#x672A;&#x65AD;&#x5F00;  </span>
+                    <span class="token keyword">if</span> recv_data<span class="token punctuation">:</span>  
+                        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;received %s from client %s&quot;</span><span class="token operator">%</span><span class="token punctuation">(</span>recv_data<span class="token punctuation">,</span> str<span class="token punctuation">(</span>addr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+                        <span class="token comment" spellcheck="true"># &#x5C06;&#x6536;&#x5230;&#x7684;&#x6D88;&#x606F;&#x653E;&#x5165;&#x5230;&#x5404;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;  </span>
+                        message_queue<span class="token punctuation">[</span>obj<span class="token punctuation">]</span><span class="token punctuation">.</span>put<span class="token punctuation">(</span>recv_data<span class="token punctuation">)</span>  
 
-                        # &#x5C06;&#x56DE;&#x590D;&#x64CD;&#x4F5C;&#x653E;&#x5230;output&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x8BA9;select&#x76D1;&#x542C;  
-                        if obj not in output_list:  
-                            output_list.append(obj)  
+                        <span class="token comment" spellcheck="true"># &#x5C06;&#x56DE;&#x590D;&#x64CD;&#x4F5C;&#x653E;&#x5230;output&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x8BA9;select&#x76D1;&#x542C;  </span>
+                        <span class="token keyword">if</span> obj <span class="token operator">not</span> <span class="token keyword">in</span> output_list<span class="token punctuation">:</span>  
+                            output_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>obj<span class="token punctuation">)</span>  
 
-                except ConnectionResetError:  
-                    # &#x5BA2;&#x6237;&#x7AEF;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x4E86;&#xFF0C;&#x5C06;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x76D1;&#x542C;&#x4ECE;input&#x5217;&#x8868;&#x4E2D;&#x79FB;&#x9664;  
-                    input_list.remove(obj)  
-                    # &#x79FB;&#x9664;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;  
-                    del message_queue[obj]  
-                    print(&quot;\n[input] Client %s disconnected&quot;%str(addr))  
+                <span class="token keyword">except</span> ConnectionResetError<span class="token punctuation">:</span>  
+                    <span class="token comment" spellcheck="true"># &#x5BA2;&#x6237;&#x7AEF;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x4E86;&#xFF0C;&#x5C06;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x76D1;&#x542C;&#x4ECE;input&#x5217;&#x8868;&#x4E2D;&#x79FB;&#x9664;  </span>
+                    input_list<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>obj<span class="token punctuation">)</span>  
+                    <span class="token comment" spellcheck="true"># &#x79FB;&#x9664;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;  </span>
+                    <span class="token keyword">del</span> message_queue<span class="token punctuation">[</span>obj<span class="token punctuation">]</span>  
+                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;\n[input] Client %s disconnected&quot;</span><span class="token operator">%</span>str<span class="token punctuation">(</span>addr<span class="token punctuation">)</span><span class="token punctuation">)</span>  
 
-        # &#x5982;&#x679C;&#x73B0;&#x5728;&#x6CA1;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;,&#x4E5F;&#x6CA1;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6;&#xFF0C;&#x5F00;&#x59CB;&#x5BF9;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x5217;&#x8868;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x662F;&#x5426;&#x9700;&#x8981;&#x53D1;&#x9001;&#x6D88;&#x606F;  
-        for sendobj in output_list:  
-            try:  
-                # &#x5982;&#x679C;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x6709;&#x6D88;&#x606F;,&#x4ECE;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x83B7;&#x53D6;&#x8981;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;  
-                if not message_queue[sendobj].empty():  
-                    # &#x4ECE;&#x8BE5;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x83B7;&#x53D6;&#x8981;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;  
-                    send_data = message_queue[sendobj].get()  
-                    sendobj.send(send_data)  
-                else:  
-                    # &#x5C06;&#x76D1;&#x542C;&#x79FB;&#x9664;&#x7B49;&#x5F85;&#x4E0B;&#x4E00;&#x6B21;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;  
-                    output_list.remove(sendobj)  
+        <span class="token comment" spellcheck="true"># &#x5982;&#x679C;&#x73B0;&#x5728;&#x6CA1;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;,&#x4E5F;&#x6CA1;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6;&#xFF0C;&#x5F00;&#x59CB;&#x5BF9;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x5217;&#x8868;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x662F;&#x5426;&#x9700;&#x8981;&#x53D1;&#x9001;&#x6D88;&#x606F;  </span>
+        <span class="token keyword">for</span> sendobj <span class="token keyword">in</span> output_list<span class="token punctuation">:</span>  
+            <span class="token keyword">try</span><span class="token punctuation">:</span>  
+                <span class="token comment" spellcheck="true"># &#x5982;&#x679C;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x6709;&#x6D88;&#x606F;,&#x4ECE;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x83B7;&#x53D6;&#x8981;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;  </span>
+                <span class="token keyword">if</span> <span class="token operator">not</span> message_queue<span class="token punctuation">[</span>sendobj<span class="token punctuation">]</span><span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+                    <span class="token comment" spellcheck="true"># &#x4ECE;&#x8BE5;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x8C61;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x83B7;&#x53D6;&#x8981;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;  </span>
+                    send_data <span class="token operator">=</span> message_queue<span class="token punctuation">[</span>sendobj<span class="token punctuation">]</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+                    sendobj<span class="token punctuation">.</span>send<span class="token punctuation">(</span>send_data<span class="token punctuation">)</span>  
+                <span class="token keyword">else</span><span class="token punctuation">:</span>  
+                    <span class="token comment" spellcheck="true"># &#x5C06;&#x76D1;&#x542C;&#x79FB;&#x9664;&#x7B49;&#x5F85;&#x4E0B;&#x4E00;&#x6B21;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;  </span>
+                    output_list<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>sendobj<span class="token punctuation">)</span>  
 
-            except ConnectionResetError:  
-                # &#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x65AD;&#x5F00;&#x4E86;  
-                del message_queue[sendobj]  
-                output_list.remove(sendobj)  
-                print(&quot;\n[output] Client  %s disconnected&quot;%str(addr))
-</code></pre><h2 id="3-&#x603B;&#x7ED3;"><a name="3-&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#3-&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x603B;&#x7ED3; </h2>
+            <span class="token keyword">except</span> ConnectionResetError<span class="token punctuation">:</span>  
+                <span class="token comment" spellcheck="true"># &#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x65AD;&#x5F00;&#x4E86;  </span>
+                <span class="token keyword">del</span> message_queue<span class="token punctuation">[</span>sendobj<span class="token punctuation">]</span>  
+                output_list<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>sendobj<span class="token punctuation">)</span>  
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;\n[output] Client  %s disconnected&quot;</span><span class="token operator">%</span>str<span class="token punctuation">(</span>addr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="3-&#x603B;&#x7ED3;"><a name="3-&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#3-&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x603B;&#x7ED3; </h2>
 <h3 id="&#x4F18;&#x70B9;"><a name="&#x4F18;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x4F18;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F18;&#x70B9; </h3>
 <p>select&#x76EE;&#x524D;&#x51E0;&#x4E4E;&#x5728;&#x6240;&#x6709;&#x7684;&#x5E73;&#x53F0;&#x4E0A;&#x652F;&#x6301;&#xFF0C;&#x5176;&#x826F;&#x597D;&#x8DE8;&#x5E73;&#x53F0;&#x652F;&#x6301;&#x4E5F;&#x662F;&#x5B83;&#x7684;&#x4E00;&#x4E2A;&#x4F18;&#x70B9;&#x3002;</p>
 <h3 id="&#x7F3A;&#x70B9;"><a name="&#x7F3A;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x7F3A;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F3A;&#x70B9; </h3>
@@ -2934,7 +2923,7 @@ if __name__ == &quot;__main__&quot;:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"单进程服务器-select版","level":"1.3.6.5","depth":3,"next":{"title":"单进程服务器-epoll版","level":"1.3.6.6","depth":3,"path":"network/dan-jin-cheng-fu-wu-5668-epoll-ban.md","ref":"network/dan-jin-cheng-fu-wu-5668-epoll-ban.md","articles":[]},"previous":{"title":"单进程服务器-非堵塞模式","level":"1.3.6.4","depth":3,"path":"network/dan-jin-cheng-fu-wu-5668-fei-du-sai-mo-shi.md","ref":"network/dan-jin-cheng-fu-wu-5668-fei-du-sai-mo-shi.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex@0.1.8","-sharing","-lunr","-search","search-plus","prism","-highlight","splitter","spoiler","expandable-chapters","book-summary-scroll-position-saver"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"Python"}},"spoiler":{},"book-summary-scroll-position-saver":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"isShowTocTitleIcon":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-3-16-148410-0","variables":{},"title":"我的第一本電子書","language":"zh-tw","links":{"sidebar":{"Home":"http://dinson.win"}},"gitbook":"*","description":"用 GitBook 制作的第一本電子書！","direction":"ltr"},"file":{"path":"network/dan-jin-cheng-fu-wu-5668-select-7248-tcp-fu-wu-qi.md","mtime":"2017-06-18T17:04:10.295Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-18T17:18:55.261Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"单进程服务器-select版","level":"1.3.6.5","depth":3,"next":{"title":"单进程服务器-epoll版","level":"1.3.6.6","depth":3,"path":"network/dan-jin-cheng-fu-wu-5668-epoll-ban.md","ref":"network/dan-jin-cheng-fu-wu-5668-epoll-ban.md","articles":[]},"previous":{"title":"单进程服务器-非堵塞模式","level":"1.3.6.4","depth":3,"path":"network/dan-jin-cheng-fu-wu-5668-fei-du-sai-mo-shi.md","ref":"network/dan-jin-cheng-fu-wu-5668-fei-du-sai-mo-shi.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex@0.1.8","-sharing","-lunr","-search","search-plus","prism","-highlight","splitter","spoiler","expandable-chapters","book-summary-scroll-position-saver"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"Python"}},"spoiler":{},"book-summary-scroll-position-saver":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"isShowTocTitleIcon":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-3-16-148410-0","variables":{},"title":"我的第一本電子書","language":"zh-tw","links":{"sidebar":{"Home":"http://dinson.win"}},"gitbook":"*","description":"用 GitBook 制作的第一本電子書！","direction":"ltr"},"file":{"path":"network/dan-jin-cheng-fu-wu-5668-select-7248-tcp-fu-wu-qi.md","mtime":"2017-06-18T17:36:51.489Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-18T17:37:47.433Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
