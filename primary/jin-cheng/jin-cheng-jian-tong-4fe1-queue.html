@@ -1,0 +1,2379 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>进程间通信-Queue · 我的第一本電子書</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        <meta name="identifier" content="978-3-16-148410-0" scheme="ISBN">
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-spoiler/spoiler.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="jin-cheng-chi-pool.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://dinson.win" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    INTRODUCE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Python基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    认识Python和基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../ren-shi-python-he-ji-chu-zhi-shi/ren-shi-python-le-89e329.html">
+            
+                <a href="../ren-shi-python-he-ji-chu-zhi-shi/ren-shi-python-le-89e329.html">
+            
+                    
+                    认识python(了解)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../ren-shi-python-he-ji-chu-zhi-shi/di-yi-ge-python-cheng-xu.html">
+            
+                <a href="../ren-shi-python-he-ji-chu-zhi-shi/di-yi-ge-python-cheng-xu.html">
+            
+                    
+                    第一个Python程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../ren-shi-python-he-ji-chu-zhi-shi/zhu-shi.html">
+            
+                <a href="../ren-shi-python-he-ji-chu-zhi-shi/zhu-shi.html">
+            
+                    
+                    注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../ren-shi-python-he-ji-chu-zhi-shi/bian-liang.html">
+            
+                <a href="../ren-shi-python-he-ji-chu-zhi-shi/bian-liang.html">
+            
+                    
+                    变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../ren-shi-python-he-ji-chu-zhi-shi/biao-shi-fu-he-guan-jian-zi.html">
+            
+                <a href="../ren-shi-python-he-ji-chu-zhi-shi/biao-shi-fu-he-guan-jian-zi.html">
+            
+                    
+                    标示符和关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../ren-shi-python-he-ji-chu-zhi-shi/shu-chu.html">
+            
+                <a href="../ren-shi-python-he-ji-chu-zhi-shi/shu-chu.html">
+            
+                    
+                    输出/输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../ren-shi-python-he-ji-chu-zhi-shi/yun-suan-fu.html">
+            
+                <a href="../ren-shi-python-he-ji-chu-zhi-shi/yun-suan-fu.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../ren-shi-python-he-ji-chu-zhi-shi/chang-yong-de-shu-ju-lei-xing-zhuan-huan.html">
+            
+                <a href="../ren-shi-python-he-ji-chu-zhi-shi/chang-yong-de-shu-ju-lei-xing-zhuan-huan.html">
+            
+                    
+                    常用的数据类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9" data-path="../ren-shi-python-he-ji-chu-zhi-shi/ifpan-duan-yu-ju.html">
+            
+                <a href="../ren-shi-python-he-ji-chu-zhi-shi/ifpan-duan-yu-ju.html">
+            
+                    
+                    if判断语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10" data-path="../ren-shi-python-he-ji-chu-zhi-shi/bi-8f8328-ji-guan-7cfb29-yun-suan-fu.html">
+            
+                <a href="../ren-shi-python-he-ji-chu-zhi-shi/bi-8f8328-ji-guan-7cfb29-yun-suan-fu.html">
+            
+                    
+                    比较(即关系)运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11" data-path="../ren-shi-python-he-ji-chu-zhi-shi/zuo-ye.html">
+            
+                <a href="../ren-shi-python-he-ji-chu-zhi-shi/zuo-ye.html">
+            
+                    
+                    作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    判断语句和循环语句
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../pan-duan-yu-ju-he-xun-huan-yu-ju/if-else.html">
+            
+                <a href="../pan-duan-yu-ju-he-xun-huan-yu-ju/if-else.html">
+            
+                    
+                    if-else
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../pan-duan-yu-ju-he-xun-huan-yu-ju/elif.html">
+            
+                <a href="../pan-duan-yu-ju-he-xun-huan-yu-ju/elif.html">
+            
+                    
+                    while循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../pan-duan-yu-ju-he-xun-huan-yu-ju/forxun-huan.html">
+            
+                <a href="../pan-duan-yu-ju-he-xun-huan-yu-ju/forxun-huan.html">
+            
+                    
+                    for循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../pan-duan-yu-ju-he-xun-huan-yu-ju/zong-jie.html">
+            
+                <a href="../pan-duan-yu-ju-he-xun-huan-yu-ju/zong-jie.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../pan-duan-yu-ju-he-xun-huan-yu-ju/zuo-ye.html">
+            
+                <a href="../pan-duan-yu-ju-he-xun-huan-yu-ju/zuo-ye.html">
+            
+                    
+                    作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    字符串、列表、元组、字典
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/zi-fu-chuan.html">
+            
+                <a href="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/zi-fu-chuan.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/lie-biao.html">
+            
+                <a href="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/lie-biao.html">
+            
+                    
+                    列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/yuan-zu.html">
+            
+                <a href="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/yuan-zu.html">
+            
+                    
+                    元组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/zi-dian.html">
+            
+                <a href="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/zi-dian.html">
+            
+                    
+                    字典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/gong-gong-fang-fa.html">
+            
+                <a href="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/gong-gong-fang-fa.html">
+            
+                    
+                    公共方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.6" data-path="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/yin-yong.html">
+            
+                <a href="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/yin-yong.html">
+            
+                    
+                    引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.7" data-path="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/zuo-ye.html">
+            
+                <a href="../zi-fu-chuan-3001-lie-biao-3001-yuan-zu-3001-zi-dian/zuo-ye.html">
+            
+                    
+                    作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../han-shu/yin-zi.html">
+            
+                <a href="../han-shu/yin-zi.html">
+            
+                    
+                    引子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../han-shu/han-shu-shi-yong.html">
+            
+                <a href="../han-shu/han-shu-shi-yong.html">
+            
+                    
+                    函数使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../han-shu/zuo-ye.html">
+            
+                <a href="../han-shu/zuo-ye.html">
+            
+                    
+                    作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    文件操作、综合应用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../wen-jian-cao-zuo-3001-zong-he-ying-yong/wen-jian-cao-zuo-jie-shao.html">
+            
+                <a href="../wen-jian-cao-zuo-3001-zong-he-ying-yong/wen-jian-cao-zuo-jie-shao.html">
+            
+                    
+                    文件操作介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../wen-jian-cao-zuo-3001-zong-he-ying-yong/wen-jian-de-du-xie.html">
+            
+                <a href="../wen-jian-cao-zuo-3001-zong-he-ying-yong/wen-jian-de-du-xie.html">
+            
+                    
+                    文件相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../wen-jian-cao-zuo-3001-zong-he-ying-yong/ying-yong-1-zhi-zuo-wen-jian-de-bei-fen.html">
+            
+                <a href="../wen-jian-cao-zuo-3001-zong-he-ying-yong/ying-yong-1-zhi-zuo-wen-jian-de-bei-fen.html">
+            
+                    
+                    应用1：制作文件的备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../wen-jian-cao-zuo-3001-zong-he-ying-yong/wen-jian-de-da-kai-yu-guan-bi.html">
+            
+                <a href="../wen-jian-cao-zuo-3001-zong-he-ying-yong/wen-jian-de-da-kai-yu-guan-bi.html">
+            
+                    
+                    文件夹相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="../wen-jian-cao-zuo-3001-zong-he-ying-yong/ying-yong-2-ff1a-pi-liang-xiu-gai-wen-jian-ming.html">
+            
+                <a href="../wen-jian-cao-zuo-3001-zong-he-ying-yong/ying-yong-2-ff1a-pi-liang-xiu-gai-wen-jian-ming.html">
+            
+                    
+                    应用2：批量修改文件名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.6" data-path="../wen-jian-cao-zuo-3001-zong-he-ying-yong/wen-jian-de-sui-ji-du-xie.html">
+            
+                <a href="../wen-jian-cao-zuo-3001-zong-he-ying-yong/wen-jian-de-sui-ji-du-xie.html">
+            
+                    
+                    作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" >
+            
+                <span>
+            
+                    
+                    面向对象1
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../mian-xiang-dui-xiang/mian-xiang-dui-xiang-bian-cheng-jie-shao.html">
+            
+                <a href="../mian-xiang-dui-xiang/mian-xiang-dui-xiang-bian-cheng-jie-shao.html">
+            
+                    
+                    面向对象编程介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../mian-xiang-dui-xiang/lei-he-dui-xiang.html">
+            
+                <a href="../mian-xiang-dui-xiang/lei-he-dui-xiang.html">
+            
+                    
+                    类和对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../mian-xiang-dui-xiang/ding-yi-lei.html">
+            
+                <a href="../mian-xiang-dui-xiang/ding-yi-lei.html">
+            
+                    
+                    定义类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../mian-xiang-dui-xiang/chuang-jian-dui-xiang.html">
+            
+                <a href="../mian-xiang-dui-xiang/chuang-jian-dui-xiang.html">
+            
+                    
+                    创建对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.5" data-path="../mian-xiang-dui-xiang/init-fang-fa.html">
+            
+                <a href="../mian-xiang-dui-xiang/init-fang-fa.html">
+            
+                    
+                    __init__()方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.6" data-path="../mian-xiang-dui-xiang/mo-6cd522-fang-fa.html">
+            
+                <a href="../mian-xiang-dui-xiang/mo-6cd522-fang-fa.html">
+            
+                    
+                    "魔法"方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.7" data-path="../mian-xiang-dui-xiang/self.html">
+            
+                <a href="../mian-xiang-dui-xiang/self.html">
+            
+                    
+                    self
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.8" data-path="../mian-xiang-dui-xiang/ying-75283a-kao-di-gua.html">
+            
+                <a href="../mian-xiang-dui-xiang/ying-75283a-kao-di-gua.html">
+            
+                    
+                    应用:烤地瓜
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.9" data-path="../mian-xiang-dui-xiang/yin-cang-shu-ju.html">
+            
+                <a href="../mian-xiang-dui-xiang/yin-cang-shu-ju.html">
+            
+                    
+                    隐藏数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.10" data-path="../mian-xiang-dui-xiang/ying-75283a-cun-fang-jia-ju.html">
+            
+                <a href="../mian-xiang-dui-xiang/ying-75283a-cun-fang-jia-ju.html">
+            
+                    
+                    应用:存放家具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" >
+            
+                <span>
+            
+                    
+                    面向对象2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../mian-xiang-dui-xiang-2/lao-wang-kai-qiang.html">
+            
+                <a href="../mian-xiang-dui-xiang-2/lao-wang-kai-qiang.html">
+            
+                    
+                    应用：老王开枪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="../mian-xiang-dui-xiang-2/bao-hu-dui-xiang-de-shu-xing.html">
+            
+                <a href="../mian-xiang-dui-xiang-2/bao-hu-dui-xiang-de-shu-xing.html">
+            
+                    
+                    保护对象的属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.3" data-path="../mian-xiang-dui-xiang-2/del-fang-fa.html">
+            
+                <a href="../mian-xiang-dui-xiang-2/del-fang-fa.html">
+            
+                    
+                    __del__()方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.4" data-path="../mian-xiang-dui-xiang-2/ji-cheng-jie-shao-yi-ji-dan-ji-cheng.html">
+            
+                <a href="../mian-xiang-dui-xiang-2/ji-cheng-jie-shao-yi-ji-dan-ji-cheng.html">
+            
+                    
+                    继承介绍以及单继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.5" data-path="../mian-xiang-dui-xiang-2/duo-ji-cheng.html">
+            
+                <a href="../mian-xiang-dui-xiang-2/duo-ji-cheng.html">
+            
+                    
+                    多继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.6" data-path="../mian-xiang-dui-xiang-2/zhong-xie-fu-lei-fang-fa-yu-diao-yong-fu-lei-fang-fa.html">
+            
+                <a href="../mian-xiang-dui-xiang-2/zhong-xie-fu-lei-fang-fa-yu-diao-yong-fu-lei-fang-fa.html">
+            
+                    
+                    重写父类方法与调用父类方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.7" data-path="../mian-xiang-dui-xiang-2/duo-tai.html">
+            
+                <a href="../mian-xiang-dui-xiang-2/duo-tai.html">
+            
+                    
+                    多态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.8" data-path="../mian-xiang-dui-xiang-2/lei-shu-xing-3001-shi-li-shu-xing.html">
+            
+                <a href="../mian-xiang-dui-xiang-2/lei-shu-xing-3001-shi-li-shu-xing.html">
+            
+                    
+                    类属性、实例属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.9" data-path="../mian-xiang-dui-xiang-2/jing-tai-fang-fa-he-lei-fang-fa.html">
+            
+                <a href="../mian-xiang-dui-xiang-2/jing-tai-fang-fa-he-lei-fang-fa.html">
+            
+                    
+                    静态方法和类方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" >
+            
+                <span>
+            
+                    
+                    面向对象3
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="../mian-xiang-dui-xiang-3/lian-xi-ff1a-she-ji-lei.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/lian-xi-ff1a-she-ji-lei.html">
+            
+                    
+                    练习：设计类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.2" data-path="../mian-xiang-dui-xiang-3/gong-chang-mo-shi.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/gong-chang-mo-shi.html">
+            
+                    
+                    工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.3" data-path="../mian-xiang-dui-xiang-3/new-fang-fa.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/new-fang-fa.html">
+            
+                    
+                    __new__方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.4" data-path="../mian-xiang-dui-xiang-3/dan-li-mo-shi.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/dan-li-mo-shi.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.5" data-path="../mian-xiang-dui-xiang-3/yi-chang-jie-shao.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/yi-chang-jie-shao.html">
+            
+                    
+                    异常介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.6" data-path="../mian-xiang-dui-xiang-3/bu-huo-yi-chang.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/bu-huo-yi-chang.html">
+            
+                    
+                    捕获异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.7" data-path="../mian-xiang-dui-xiang-3/yi-chang-de-chuan-di.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/yi-chang-de-chuan-di.html">
+            
+                    
+                    异常的传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.8" data-path="../mian-xiang-dui-xiang-3/pao-chu-zi-ding-yi-de-yi-chang.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/pao-chu-zi-ding-yi-de-yi-chang.html">
+            
+                    
+                    抛出自定义的异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.9" data-path="../mian-xiang-dui-xiang-3/yi-chang-chu-li-zhong-pao-chu-yi-chang.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/yi-chang-chu-li-zhong-pao-chu-yi-chang.html">
+            
+                    
+                    异常处理中抛出异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.10" data-path="../mian-xiang-dui-xiang-3/mo-kuai.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/mo-kuai.html">
+            
+                    
+                    模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.11" data-path="../mian-xiang-dui-xiang-3/mo-kuai-zhi-zuo.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/mo-kuai-zhi-zuo.html">
+            
+                    
+                    模块制作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.12" data-path="../mian-xiang-dui-xiang-3/mo-kuai-zhong-de-all.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/mo-kuai-zhong-de-all.html">
+            
+                    
+                    模块中的__all__
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.13" data-path="../mian-xiang-dui-xiang-3/pythonzhong-de-bao.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/pythonzhong-de-bao.html">
+            
+                    
+                    python中的包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.14" data-path="../mian-xiang-dui-xiang-3/mo-kuai-fa-bu.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/mo-kuai-fa-bu.html">
+            
+                    
+                    模块发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.15" data-path="../mian-xiang-dui-xiang-3/mo-kuai-an-zhuang-3001-shi-yong.html">
+            
+                <a href="../mian-xiang-dui-xiang-3/mo-kuai-an-zhuang-3001-shi-yong.html">
+            
+                    
+                    模块安装、使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" >
+            
+                <span>
+            
+                    
+                    强化练习
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.9.1" data-path="../qiang-hua-lian-xi/gei-cheng-xu-chuan-can-shu.html">
+            
+                <a href="../qiang-hua-lian-xi/gei-cheng-xu-chuan-can-shu.html">
+            
+                    
+                    给程序传参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.2" data-path="../qiang-hua-lian-xi/lie-biao-tui-dao-shi.html">
+            
+                <a href="../qiang-hua-lian-xi/lie-biao-tui-dao-shi.html">
+            
+                    
+                    列表推导式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.3" data-path="../qiang-hua-lian-xi/setlisttuple.html">
+            
+                <a href="../qiang-hua-lian-xi/setlisttuple.html">
+            
+                    
+                    set、list、tuple
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.4" data-path="../qiang-hua-lian-xi/si-kao-ti.html">
+            
+                <a href="../qiang-hua-lian-xi/si-kao-ti.html">
+            
+                    
+                    思考题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" >
+            
+                <span>
+            
+                    
+                    打飞机
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.10.1" data-path="../da-fei-ji/chuang-jian-jie-mian.html">
+            
+                <a href="../da-fei-ji/chuang-jian-jie-mian.html">
+            
+                    
+                    创建界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.2" data-path="../da-fei-ji/jian-ce-jian-pan.html">
+            
+                <a href="../da-fei-ji/jian-ce-jian-pan.html">
+            
+                    
+                    检测键盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.3" data-path="../da-fei-ji/xian-shi-3001-kong-zhi-wan-ju-fei-673a-mian-xiang-guo-cheng.html">
+            
+                <a href="../da-fei-ji/xian-shi-3001-kong-zhi-wan-ju-fei-673a-mian-xiang-guo-cheng.html">
+            
+                    
+                    显示、控制玩具飞机-面向过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.4" data-path="../da-fei-ji/xian-shi-3001-kong-zhi-wan-ju-fei-673a-mian-xiang-dui-xiang.html">
+            
+                <a href="../da-fei-ji/xian-shi-3001-kong-zhi-wan-ju-fei-673a-mian-xiang-dui-xiang.html">
+            
+                    
+                    显示、控制玩具飞机-面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.5" data-path="../da-fei-ji/wan-jia-fei-ji-fa-she-zi-dan.html">
+            
+                <a href="../da-fei-ji/wan-jia-fei-ji-fa-she-zi-dan.html">
+            
+                    
+                    玩家飞机发射子弹
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.6" data-path="../da-fei-ji/xian-shi-di-ji.html">
+            
+                <a href="../da-fei-ji/xian-shi-di-ji.html">
+            
+                    
+                    显示敌机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.7" data-path="../da-fei-ji/you-hua-dai-ma.html">
+            
+                <a href="../da-fei-ji/you-hua-dai-ma.html">
+            
+                    
+                    优化代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.8" data-path="../da-fei-ji/rang-di-ji-yi-dong.html">
+            
+                <a href="../da-fei-ji/rang-di-ji-yi-dong.html">
+            
+                    
+                    让敌机移动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.9" data-path="../da-fei-ji/di-ji-fa-she-zi-dan.html">
+            
+                <a href="../da-fei-ji/di-ji-fa-she-zi-dan.html">
+            
+                    
+                    敌机发射子弹
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.10" data-path="../da-fei-ji/dai-ma-you-5316-chou-xiang-chu-ji-lei.html">
+            
+                <a href="../da-fei-ji/dai-ma-you-5316-chou-xiang-chu-ji-lei.html">
+            
+                    
+                    代码优化-抽象出基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" >
+            
+                <span>
+            
+                    
+                    面向对象进阶
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.11.1" data-path="../zhi-shi-dian-shi-yi/yuan-lei.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/yuan-lei.html">
+            
+                    
+                    元类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11.2" data-path="../zhi-shi-dian-shi-yi/pythonshi-dong-tai-yu-yan.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/pythonshi-dong-tai-yu-yan.html">
+            
+                    
+                    python是动态语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11.3" data-path="../zhi-shi-dian-shi-yi/slots.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/slots.html">
+            
+                    
+                    __slots__
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11.4" data-path="../zhi-shi-dian-shi-yi/sheng-cheng-qi.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/sheng-cheng-qi.html">
+            
+                    
+                    生成器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11.5" data-path="../zhi-shi-dian-shi-yi/die-dai-qi.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/die-dai-qi.html">
+            
+                    
+                    迭代器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11.6" data-path="../zhi-shi-dian-shi-yi/bi-bao.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/bi-bao.html">
+            
+                    
+                    闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11.7" data-path="../zhi-shi-dian-shi-yi/zhuang-shi-qi.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/zhuang-shi-qi.html">
+            
+                    
+                    装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" >
+            
+                <span>
+            
+                    
+                    进程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.12.1" data-path="duo-ren-wu-de-yin-ru.html">
+            
+                <a href="duo-ren-wu-de-yin-ru.html">
+            
+                    
+                    多任务的引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12.2" data-path="duo-ren-wu-de-gai-nian.html">
+            
+                <a href="duo-ren-wu-de-gai-nian.html">
+            
+                    
+                    进程的创建-fork
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12.3" data-path="duo-jin-cheng-xiu-gai-quan-ju-bian-liang.html">
+            
+                <a href="duo-jin-cheng-xiu-gai-quan-ju-bian-liang.html">
+            
+                    
+                    多进程修改全局变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12.4" data-path="duo-ci-fork-wen-ti.html">
+            
+                <a href="duo-ci-fork-wen-ti.html">
+            
+                    
+                    多次fork问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12.5" data-path="multiprocessing.html">
+            
+                <a href="multiprocessing.html">
+            
+                    
+                    进程的创建-multiprocessing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12.6" data-path="jin-cheng-de-chuang-5efa-process-zi-lei.html">
+            
+                <a href="jin-cheng-de-chuang-5efa-process-zi-lei.html">
+            
+                    
+                    进程的创建-Process子类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12.7" data-path="jin-cheng-chi-pool.html">
+            
+                <a href="jin-cheng-chi-pool.html">
+            
+                    
+                    进程池Pool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.12.8" data-path="jin-cheng-jian-tong-4fe1-queue.html">
+            
+                <a href="jin-cheng-jian-tong-4fe1-queue.html">
+            
+                    
+                    进程间通信-Queue
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" >
+            
+                <span>
+            
+                    
+                    线程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.13.1" data-path="../xian-cheng/duo-xian-7a0b-threading.html">
+            
+                <a href="../xian-cheng/duo-xian-7a0b-threading.html">
+            
+                    
+                    多线程-threading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13.2" data-path="../xian-cheng/threadingzhu-yi-dian.html">
+            
+                <a href="../xian-cheng/threadingzhu-yi-dian.html">
+            
+                    
+                    threading注意点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13.3" data-path="../xian-cheng/duo-xian-7a0b-gong-xiang-quan-ju-bian-liang.html">
+            
+                <a href="../xian-cheng/duo-xian-7a0b-gong-xiang-quan-ju-bian-liang.html">
+            
+                    
+                    多线程-共享全局变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13.4" data-path="../xian-cheng/jin-cheng-vs-xian-cheng.html">
+            
+                <a href="../xian-cheng/jin-cheng-vs-xian-cheng.html">
+            
+                    
+                    进程VS线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13.5" data-path="../xian-cheng/tong-bu-de-gai-nian.html">
+            
+                <a href="../xian-cheng/tong-bu-de-gai-nian.html">
+            
+                    
+                    同步的概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13.6" data-path="../xian-cheng/hu-chi-suo.html">
+            
+                <a href="../xian-cheng/hu-chi-suo.html">
+            
+                    
+                    互斥锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13.7" data-path="../xian-cheng/duo-xian-7a0b-fei-gong-xiang-shu-ju.html">
+            
+                <a href="../xian-cheng/duo-xian-7a0b-fei-gong-xiang-shu-ju.html">
+            
+                    
+                    多线程-非共享数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13.8" data-path="../xian-cheng/si-suo.html">
+            
+                <a href="../xian-cheng/si-suo.html">
+            
+                    
+                    死锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13.9" data-path="../xian-cheng/tong-bu-ying-yong.html">
+            
+                <a href="../xian-cheng/tong-bu-ying-yong.html">
+            
+                    
+                    同步应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13.10" data-path="../xian-cheng/sheng-chan-zhe-yu-xiao-fei-zhe-mo-shi.html">
+            
+                <a href="../xian-cheng/sheng-chan-zhe-yu-xiao-fei-zhe-mo-shi.html">
+            
+                    
+                    生产者与消费者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13.11" data-path="../xian-cheng/threadlocal.html">
+            
+                <a href="../xian-cheng/threadlocal.html">
+            
+                    
+                    ThreadLocal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13.12" data-path="../xian-cheng/yi-bu.html">
+            
+                <a href="../xian-cheng/yi-bu.html">
+            
+                    
+                    异步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" >
+            
+                <span>
+            
+                    
+                    知识点拾遗
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.14.1" data-path="../zhi-shi-dian-shi-yi/importdao-ru-mo-kuai.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/importdao-ru-mo-kuai.html">
+            
+                    
+                    import导入模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.2" data-path="../zhi-shi-dian-shi-yi/xun-huan-dao-ru.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/xun-huan-dao-ru.html">
+            
+                    
+                    循环导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.3" data-path="../zhi-shi-dian-shi-yi/zuo-yong-yu.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/zuo-yong-yu.html">
+            
+                    
+                    作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.4" data-path="../zhi-shi-dian-shi-yi/is.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/is.html">
+            
+                    
+                    ==、is
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.5" data-path="../zhi-shi-dian-shi-yi/shen-kao-bei-3001-qian-kao-bei.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/shen-kao-bei-3001-qian-kao-bei.html">
+            
+                    
+                    深拷贝、浅拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.6" data-path="../zhi-shi-dian-shi-yi/jin-zhi-3001-wei-yun-suan.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/jin-zhi-3001-wei-yun-suan.html">
+            
+                    
+                    进制、位运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.7" data-path="../zhi-shi-dian-shi-yi/si-you-hua.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/si-you-hua.html">
+            
+                    
+                    私有化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.8" data-path="../zhi-shi-dian-shi-yi/shu-xing-property.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/shu-xing-property.html">
+            
+                    
+                    属性property
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.9" data-path="../zhi-shi-dian-shi-yi/la-ji-hui-shou.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/la-ji-hui-shou.html">
+            
+                    
+                    垃圾回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.10" data-path="../zhi-shi-dian-shi-yi/nei-jian-shu-xing-3001-nei-jian-han-shu.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/nei-jian-shu-xing-3001-nei-jian-han-shu.html">
+            
+                    
+                    内建属性、内建函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.11" data-path="../zhi-shi-dian-shi-yi/ji-he-set.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/ji-he-set.html">
+            
+                    
+                    集合set
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.12" data-path="../zhi-shi-dian-shi-yi/functools.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/functools.html">
+            
+                    
+                    functools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.13" data-path="../zhi-shi-dian-shi-yi/mo-kuai-jin-jie.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/mo-kuai-jin-jie.html">
+            
+                    
+                    模块进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.14" data-path="../zhi-shi-dian-shi-yi/diao-shi.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/diao-shi.html">
+            
+                    
+                    调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.15" data-path="../zhi-shi-dian-shi-yi/bian-ma-feng-ge.html">
+            
+                <a href="../zhi-shi-dian-shi-yi/bian-ma-feng-ge.html">
+            
+                    
+                    编码风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    网络编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    网络通信概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    UDP
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" >
+            
+                <span>
+            
+                    
+                    TFTP
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
+            
+                <span>
+            
+                    
+                    TCP
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" >
+            
+                <span>
+            
+                    
+                    网络通信过程详解
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" >
+            
+                <span>
+            
+                    
+                    并发服务器
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >进程间通信-Queue</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;queue">&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;-Queue </a></li><ul><li><a href="#1-queue&#x7684;&#x4F7F;&#x7528;">1. Queue&#x7684;&#x4F7F;&#x7528; </a></li><li><a href="#2-queue&#x5B9E;&#x4F8B;">2. Queue&#x5B9E;&#x4F8B; </a></li><li><a href="#3-&#x8FDB;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;queue">3. &#x8FDB;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;Queue </a></li></ul></ul></div><a href="#&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;queue" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;queue"><a name="&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;queue" class="anchor-navigation-ex-anchor" href="#&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;queue"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;-Queue </h1>
+<p>Process&#x4E4B;&#x95F4;&#x6709;&#x65F6;&#x9700;&#x8981;&#x901A;&#x4FE1;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x591A;&#x673A;&#x5236;&#x6765;&#x5B9E;&#x73B0;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x3002;</p>
+<h2 id="1-queue&#x7684;&#x4F7F;&#x7528;"><a name="1-queue&#x7684;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#1-queue&#x7684;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Queue&#x7684;&#x4F7F;&#x7528; </h2>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;multiprocessing&#x6A21;&#x5757;&#x7684;Queue&#x5B9E;&#x73B0;&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x4F20;&#x9012;&#xFF0C;Queue&#x672C;&#x8EAB;&#x662F;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x5217;&#x961F;&#x7A0B;&#x5E8F;&#xFF0C;&#x9996;&#x5148;&#x7528;&#x4E00;&#x4E2A;&#x5C0F;&#x5B9E;&#x4F8B;&#x6765;&#x6F14;&#x793A;&#x4E00;&#x4E0B;Queue&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF1A;</p>
+<pre class="language-"><code class="lang-py"><span class="token comment" spellcheck="true">#coding=utf-8</span>
+<span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Queue
+q<span class="token operator">=</span>Queue<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;Queue&#x5BF9;&#x8C61;&#xFF0C;&#x6700;&#x591A;&#x53EF;&#x63A5;&#x6536;&#x4E09;&#x6761;put&#x6D88;&#x606F;</span>
+q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token string">&quot;&#x6D88;&#x606F;1&quot;</span><span class="token punctuation">)</span> 
+q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token string">&quot;&#x6D88;&#x606F;2&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>full<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#False</span>
+q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token string">&quot;&#x6D88;&#x606F;3&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>full<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#True</span>
+
+<span class="token comment" spellcheck="true">#&#x56E0;&#x4E3A;&#x6D88;&#x606F;&#x5217;&#x961F;&#x5DF2;&#x6EE1;&#x4E0B;&#x9762;&#x7684;try&#x90FD;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;try&#x4F1A;&#x7B49;&#x5F85;2&#x79D2;&#x540E;&#x518D;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;Try&#x4F1A;&#x7ACB;&#x523B;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token string">&quot;&#x6D88;&#x606F;4&quot;</span><span class="token punctuation">,</span><span class="token boolean">True</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6D88;&#x606F;&#x5217;&#x961F;&#x5DF2;&#x6EE1;&#xFF0C;&#x73B0;&#x6709;&#x6D88;&#x606F;&#x6570;&#x91CF;:%s&quot;</span><span class="token operator">%</span>q<span class="token punctuation">.</span>qsize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    q<span class="token punctuation">.</span>put_nowait<span class="token punctuation">(</span><span class="token string">&quot;&#x6D88;&#x606F;4&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6D88;&#x606F;&#x5217;&#x961F;&#x5DF2;&#x6EE1;&#xFF0C;&#x73B0;&#x6709;&#x6D88;&#x606F;&#x6570;&#x91CF;:%s&quot;</span><span class="token operator">%</span>q<span class="token punctuation">.</span>qsize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#&#x63A8;&#x8350;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5148;&#x5224;&#x65AD;&#x6D88;&#x606F;&#x5217;&#x961F;&#x662F;&#x5426;&#x5DF2;&#x6EE1;&#xFF0C;&#x518D;&#x5199;&#x5165;</span>
+<span class="token keyword">if</span> <span class="token operator">not</span> q<span class="token punctuation">.</span>full<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    q<span class="token punctuation">.</span>put_nowait<span class="token punctuation">(</span><span class="token string">&quot;&#x6D88;&#x606F;4&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#&#x8BFB;&#x53D6;&#x6D88;&#x606F;&#x65F6;&#xFF0C;&#x5148;&#x5224;&#x65AD;&#x6D88;&#x606F;&#x5217;&#x961F;&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#xFF0C;&#x518D;&#x8BFB;&#x53D6;</span>
+<span class="token keyword">if</span> <span class="token operator">not</span> q<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>q<span class="token punctuation">.</span>qsize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>get_nowait<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;:</p>
+<pre class="language-"><code class="lang-py"><span class="token boolean">False</span>
+<span class="token boolean">True</span>
+&#x6D88;&#x606F;&#x5217;&#x961F;&#x5DF2;&#x6EE1;&#xFF0C;&#x73B0;&#x6709;&#x6D88;&#x606F;&#x6570;&#x91CF;<span class="token punctuation">:</span><span class="token number">3</span>
+&#x6D88;&#x606F;&#x5217;&#x961F;&#x5DF2;&#x6EE1;&#xFF0C;&#x73B0;&#x6709;&#x6D88;&#x606F;&#x6570;&#x91CF;<span class="token punctuation">:</span><span class="token number">3</span>
+&#x6D88;&#x606F;<span class="token number">1</span>
+&#x6D88;&#x606F;<span class="token number">2</span>
+&#x6D88;&#x606F;<span class="token number">3</span>
+</code></pre>
+<h4 id="&#x8BF4;&#x660E;"><a name="&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BF4;&#x660E; </h4>
+<p>&#x521D;&#x59CB;&#x5316;Queue()&#x5BF9;&#x8C61;&#x65F6;&#xFF08;&#x4F8B;&#x5982;&#xFF1A;q=Queue()&#xFF09;&#xFF0C;&#x82E5;&#x62EC;&#x53F7;&#x4E2D;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x6700;&#x5927;&#x53EF;&#x63A5;&#x6536;&#x7684;&#x6D88;&#x606F;&#x6570;&#x91CF;&#xFF0C;&#x6216;&#x6570;&#x91CF;&#x4E3A;&#x8D1F;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4EE3;&#x8868;&#x53EF;&#x63A5;&#x53D7;&#x7684;&#x6D88;&#x606F;&#x6570;&#x91CF;&#x6CA1;&#x6709;&#x4E0A;&#x9650;&#xFF08;&#x76F4;&#x5230;&#x5185;&#x5B58;&#x7684;&#x5C3D;&#x5934;&#xFF09;&#xFF1B;</p>
+<ul>
+<li><p>Queue.qsize()&#xFF1A;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x961F;&#x5217;&#x5305;&#x542B;&#x7684;&#x6D88;&#x606F;&#x6570;&#x91CF;&#xFF1B;</p>
+</li>
+<li><p>Queue.empty()&#xFF1A;&#x5982;&#x679C;&#x961F;&#x5217;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD4;&#x56DE;True&#xFF0C;&#x53CD;&#x4E4B;False &#xFF1B;</p>
+</li>
+<li><p>Queue.full()&#xFF1A;&#x5982;&#x679C;&#x961F;&#x5217;&#x6EE1;&#x4E86;&#xFF0C;&#x8FD4;&#x56DE;True,&#x53CD;&#x4E4B;False&#xFF1B;</p>
+</li>
+<li><p>Queue.get([block[, timeout]])&#xFF1A;&#x83B7;&#x53D6;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5176;&#x4ECE;&#x5217;&#x961F;&#x4E2D;&#x79FB;&#x9664;&#xFF0C;block&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;True&#xFF1B;</p>
+</li>
+</ul>
+<p>1&#xFF09;&#x5982;&#x679C;block&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x4E14;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;timeout&#xFF08;&#x5355;&#x4F4D;&#x79D2;&#xFF09;&#xFF0C;&#x6D88;&#x606F;&#x5217;&#x961F;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#xFF0C;&#x6B64;&#x65F6;&#x7A0B;&#x5E8F;&#x5C06;&#x88AB;&#x963B;&#x585E;&#xFF08;&#x505C;&#x5728;&#x8BFB;&#x53D6;&#x72B6;&#x6001;&#xFF09;&#xFF0C;&#x76F4;&#x5230;&#x4ECE;&#x6D88;&#x606F;&#x5217;&#x961F;&#x8BFB;&#x5230;&#x6D88;&#x606F;&#x4E3A;&#x6B62;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;timeout&#xFF0C;&#x5219;&#x4F1A;&#x7B49;&#x5F85;timeout&#x79D2;&#xFF0C;&#x82E5;&#x8FD8;&#x6CA1;&#x8BFB;&#x53D6;&#x5230;&#x4EFB;&#x4F55;&#x6D88;&#x606F;&#xFF0C;&#x5219;&#x629B;&#x51FA;&quot;Queue.Empty&quot;&#x5F02;&#x5E38;&#xFF1B;</p>
+<p>2&#xFF09;&#x5982;&#x679C;block&#x503C;&#x4E3A;False&#xFF0C;&#x6D88;&#x606F;&#x5217;&#x961F;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x4F1A;&#x7ACB;&#x523B;&#x629B;&#x51FA;&quot;Queue.Empty&quot;&#x5F02;&#x5E38;&#xFF1B;</p>
+<ul>
+<li><p>Queue.get_nowait()&#xFF1A;&#x76F8;&#x5F53;Queue.get(False)&#xFF1B;</p>
+</li>
+<li><p>Queue.put(item,[block[, timeout]])&#xFF1A;&#x5C06;item&#x6D88;&#x606F;&#x5199;&#x5165;&#x961F;&#x5217;&#xFF0C;block&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;True&#xFF1B;</p>
+</li>
+</ul>
+<p>1&#xFF09;&#x5982;&#x679C;block&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x4E14;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;timeout&#xFF08;&#x5355;&#x4F4D;&#x79D2;&#xFF09;&#xFF0C;&#x6D88;&#x606F;&#x5217;&#x961F;&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x6CA1;&#x6709;&#x7A7A;&#x95F4;&#x53EF;&#x5199;&#x5165;&#xFF0C;&#x6B64;&#x65F6;&#x7A0B;&#x5E8F;&#x5C06;&#x88AB;&#x963B;&#x585E;&#xFF08;&#x505C;&#x5728;&#x5199;&#x5165;&#x72B6;&#x6001;&#xFF09;&#xFF0C;&#x76F4;&#x5230;&#x4ECE;&#x6D88;&#x606F;&#x5217;&#x961F;&#x817E;&#x51FA;&#x7A7A;&#x95F4;&#x4E3A;&#x6B62;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;timeout&#xFF0C;&#x5219;&#x4F1A;&#x7B49;&#x5F85;timeout&#x79D2;&#xFF0C;&#x82E5;&#x8FD8;&#x6CA1;&#x7A7A;&#x95F4;&#xFF0C;&#x5219;&#x629B;&#x51FA;&quot;Queue.Full&quot;&#x5F02;&#x5E38;&#xFF1B;</p>
+<p>2&#xFF09;&#x5982;&#x679C;block&#x503C;&#x4E3A;False&#xFF0C;&#x6D88;&#x606F;&#x5217;&#x961F;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7A7A;&#x95F4;&#x53EF;&#x5199;&#x5165;&#xFF0C;&#x5219;&#x4F1A;&#x7ACB;&#x523B;&#x629B;&#x51FA;&quot;Queue.Full&quot;&#x5F02;&#x5E38;&#xFF1B;</p>
+<ul>
+<li>Queue.put_nowait(item)&#xFF1A;&#x76F8;&#x5F53;Queue.put(item, False)&#xFF1B;</li>
+</ul>
+<h2 id="2-queue&#x5B9E;&#x4F8B;"><a name="2-queue&#x5B9E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#2-queue&#x5B9E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>2. Queue&#x5B9E;&#x4F8B; </h2>
+<p>&#x6211;&#x4EEC;&#x4EE5;Queue&#x4E3A;&#x4F8B;&#xFF0C;&#x5728;&#x7236;&#x8FDB;&#x7A0B;&#x4E2D;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C;&#x4E00;&#x4E2A;&#x5F80;Queue&#x91CC;&#x5199;&#x6570;&#x636E;&#xFF0C;&#x4E00;&#x4E2A;&#x4ECE;Queue&#x91CC;&#x8BFB;&#x6570;&#x636E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-py"><span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Process<span class="token punctuation">,</span> Queue
+<span class="token keyword">import</span> os<span class="token punctuation">,</span> time<span class="token punctuation">,</span> random
+
+
+<span class="token comment" spellcheck="true"># &#x5199;&#x6570;&#x636E;&#x8FDB;&#x7A0B;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;:</span>
+<span class="token keyword">def</span> <span class="token function">write</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> value <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">&apos;A&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;B&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;C&apos;</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;Put %s to queue...&apos;</span> <span class="token operator">%</span> value<span class="token punctuation">)</span>
+        q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># &#x8BFB;&#x6570;&#x636E;&#x8FDB;&#x7A0B;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;:</span>
+<span class="token keyword">def</span> <span class="token function">read</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> q<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            value <span class="token operator">=</span> q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;Get %s from queue.&apos;</span> <span class="token operator">%</span> value<span class="token punctuation">)</span>
+            time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># &#x7236;&#x8FDB;&#x7A0B;&#x521B;&#x5EFA;Queue&#xFF0C;&#x5E76;&#x4F20;&#x7ED9;&#x5404;&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;&#xFF1A;</span>
+    q <span class="token operator">=</span> Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    pw <span class="token operator">=</span> Process<span class="token punctuation">(</span>target<span class="token operator">=</span>write<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    pr <span class="token operator">=</span> Process<span class="token punctuation">(</span>target<span class="token operator">=</span>read<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># &#x542F;&#x52A8;&#x5B50;&#x8FDB;&#x7A0B;pw&#xFF0C;&#x5199;&#x5165;:</span>
+    pw<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># &#x7B49;&#x5F85;pw&#x7ED3;&#x675F;:</span>
+    pw<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># &#x542F;&#x52A8;&#x5B50;&#x8FDB;&#x7A0B;pr&#xFF0C;&#x8BFB;&#x53D6;:</span>
+    pr<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    pr<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># pr&#x8FDB;&#x7A0B;&#x91CC;&#x662F;&#x6B7B;&#x5FAA;&#x73AF;&#xFF0C;&#x65E0;&#x6CD5;&#x7B49;&#x5F85;&#x5176;&#x7ED3;&#x675F;&#xFF0C;&#x53EA;&#x80FD;&#x5F3A;&#x884C;&#x7EC8;&#x6B62;:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;&apos;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x6240;&#x6709;&#x6570;&#x636E;&#x90FD;&#x5199;&#x5165;&#x5E76;&#x4E14;&#x8BFB;&#x5B8C;&apos;</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-py">Put A to queue<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+Put B to queue<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+Put C to queue<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+Get A <span class="token keyword">from</span> queue<span class="token punctuation">.</span>
+Get B <span class="token keyword">from</span> queue<span class="token punctuation">.</span>
+Get C <span class="token keyword">from</span> queue<span class="token punctuation">.</span>
+
+&#x6240;&#x6709;&#x6570;&#x636E;&#x90FD;&#x5199;&#x5165;&#x5E76;&#x4E14;&#x8BFB;&#x5B8C;
+</code></pre>
+<h2 id="3-&#x8FDB;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;queue"><a name="3-&#x8FDB;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;queue" class="anchor-navigation-ex-anchor" href="#3-&#x8FDB;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;queue"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x8FDB;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;Queue </h2>
+<p>&#x5982;&#x679C;&#x8981;&#x4F7F;&#x7528;Pool&#x521B;&#x5EFA;&#x8FDB;&#x7A0B;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x4F7F;&#x7528;multiprocessing.Manager()&#x4E2D;&#x7684;Queue()&#xFF0C;&#x800C;&#x4E0D;&#x662F;multiprocessing.Queue()&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x5F97;&#x5230;&#x4E00;&#x6761;&#x5982;&#x4E0B;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF1A;</p>
+<p>RuntimeError: Queue objects should only be shared between processes through inheritance.</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x8FDB;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x8FDB;&#x7A0B;&#x5982;&#x4F55;&#x901A;&#x4FE1;&#xFF1A;</p>
+<pre class="language-"><code class="lang-py"><span class="token comment" spellcheck="true">#&#x4FEE;&#x6539;import&#x4E2D;&#x7684;Queue&#x4E3A;Manager</span>
+<span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Manager<span class="token punctuation">,</span>Pool
+<span class="token keyword">import</span> os<span class="token punctuation">,</span>time<span class="token punctuation">,</span>random
+
+<span class="token keyword">def</span> <span class="token function">reader</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;reader&#x542F;&#x52A8;(%s),&#x7236;&#x8FDB;&#x7A0B;&#x4E3A;(%s)&quot;</span><span class="token operator">%</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>os<span class="token punctuation">.</span>getppid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>q<span class="token punctuation">.</span>qsize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;reader&#x4ECE;Queue&#x83B7;&#x53D6;&#x5230;&#x6D88;&#x606F;&#xFF1A;%s&quot;</span><span class="token operator">%</span>q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">writer</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;writer&#x542F;&#x52A8;(%s),&#x7236;&#x8FDB;&#x7A0B;&#x4E3A;(%s)&quot;</span><span class="token operator">%</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>os<span class="token punctuation">.</span>getppid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token string">&quot;dongGe&quot;</span><span class="token punctuation">:</span>
+        q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">&quot;__main__&quot;</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;(%s) start&quot;</span><span class="token operator">%</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    q<span class="token operator">=</span>Manager<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Queue<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#&#x4F7F;&#x7528;Manager&#x4E2D;&#x7684;Queue&#x6765;&#x521D;&#x59CB;&#x5316;</span>
+    po<span class="token operator">=</span>Pool<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#&#x4F7F;&#x7528;&#x963B;&#x585E;&#x6A21;&#x5F0F;&#x521B;&#x5EFA;&#x8FDB;&#x7A0B;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x5728;reader&#x4E2D;&#x4F7F;&#x7528;&#x6B7B;&#x5FAA;&#x73AF;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;writer&#x5B8C;&#x5168;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x518D;&#x7528;reader&#x53BB;&#x8BFB;&#x53D6;</span>
+    po<span class="token punctuation">.</span>apply<span class="token punctuation">(</span>writer<span class="token punctuation">,</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    po<span class="token punctuation">.</span>apply<span class="token punctuation">(</span>reader<span class="token punctuation">,</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    po<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    po<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;(%s) End&quot;</span><span class="token operator">%</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;:</p>
+<pre class="language-"><code class="lang-py"><span class="token punctuation">(</span><span class="token number">21156</span><span class="token punctuation">)</span> start
+writer&#x542F;&#x52A8;<span class="token punctuation">(</span><span class="token number">21162</span><span class="token punctuation">)</span><span class="token punctuation">,</span>&#x7236;&#x8FDB;&#x7A0B;&#x4E3A;<span class="token punctuation">(</span><span class="token number">21156</span><span class="token punctuation">)</span>
+reader&#x542F;&#x52A8;<span class="token punctuation">(</span><span class="token number">21162</span><span class="token punctuation">)</span><span class="token punctuation">,</span>&#x7236;&#x8FDB;&#x7A0B;&#x4E3A;<span class="token punctuation">(</span><span class="token number">21156</span><span class="token punctuation">)</span>
+reader&#x4ECE;Queue&#x83B7;&#x53D6;&#x5230;&#x6D88;&#x606F;&#xFF1A;d
+reader&#x4ECE;Queue&#x83B7;&#x53D6;&#x5230;&#x6D88;&#x606F;&#xFF1A;o
+reader&#x4ECE;Queue&#x83B7;&#x53D6;&#x5230;&#x6D88;&#x606F;&#xFF1A;n
+reader&#x4ECE;Queue&#x83B7;&#x53D6;&#x5230;&#x6D88;&#x606F;&#xFF1A;g
+reader&#x4ECE;Queue&#x83B7;&#x53D6;&#x5230;&#x6D88;&#x606F;&#xFF1A;G
+reader&#x4ECE;Queue&#x83B7;&#x53D6;&#x5230;&#x6D88;&#x606F;&#xFF1A;e
+<span class="token punctuation">(</span><span class="token number">21156</span><span class="token punctuation">)</span> End
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="jin-cheng-chi-pool.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 进程池Pool">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"进程间通信-Queue","level":"1.2.12.8","depth":3,"next":{"title":"线程","level":"1.2.13","depth":2,"ref":"","articles":[{"title":"多线程-threading","level":"1.2.13.1","depth":3,"path":"primary/xian-cheng/duo-xian-7a0b-threading.md","ref":"primary/xian-cheng/duo-xian-7a0b-threading.md","articles":[]},{"title":"threading注意点","level":"1.2.13.2","depth":3,"path":"primary/xian-cheng/threadingzhu-yi-dian.md","ref":"primary/xian-cheng/threadingzhu-yi-dian.md","articles":[]},{"title":"多线程-共享全局变量","level":"1.2.13.3","depth":3,"path":"primary/xian-cheng/duo-xian-7a0b-gong-xiang-quan-ju-bian-liang.md","ref":"primary/xian-cheng/duo-xian-7a0b-gong-xiang-quan-ju-bian-liang.md","articles":[]},{"title":"进程VS线程","level":"1.2.13.4","depth":3,"path":"primary/xian-cheng/jin-cheng-vs-xian-cheng.md","ref":"primary/xian-cheng/jin-cheng-vs-xian-cheng.md","articles":[]},{"title":"同步的概念","level":"1.2.13.5","depth":3,"path":"primary/xian-cheng/tong-bu-de-gai-nian.md","ref":"primary/xian-cheng/tong-bu-de-gai-nian.md","articles":[]},{"title":"互斥锁","level":"1.2.13.6","depth":3,"path":"primary/xian-cheng/hu-chi-suo.md","ref":"primary/xian-cheng/hu-chi-suo.md","articles":[]},{"title":"多线程-非共享数据","level":"1.2.13.7","depth":3,"path":"primary/xian-cheng/duo-xian-7a0b-fei-gong-xiang-shu-ju.md","ref":"primary/xian-cheng/duo-xian-7a0b-fei-gong-xiang-shu-ju.md","articles":[]},{"title":"死锁","level":"1.2.13.8","depth":3,"path":"primary/xian-cheng/si-suo.md","ref":"primary/xian-cheng/si-suo.md","articles":[]},{"title":"同步应用","level":"1.2.13.9","depth":3,"path":"primary/xian-cheng/tong-bu-ying-yong.md","ref":"primary/xian-cheng/tong-bu-ying-yong.md","articles":[]},{"title":"生产者与消费者模式","level":"1.2.13.10","depth":3,"path":"primary/xian-cheng/sheng-chan-zhe-yu-xiao-fei-zhe-mo-shi.md","ref":"primary/xian-cheng/sheng-chan-zhe-yu-xiao-fei-zhe-mo-shi.md","articles":[]},{"title":"ThreadLocal","level":"1.2.13.11","depth":3,"path":"primary/xian-cheng/threadlocal.md","ref":"primary/xian-cheng/threadlocal.md","articles":[]},{"title":"异步","level":"1.2.13.12","depth":3,"path":"primary/xian-cheng/yi-bu.md","ref":"primary/xian-cheng/yi-bu.md","articles":[]}]},"previous":{"title":"进程池Pool","level":"1.2.12.7","depth":3,"path":"primary/jin-cheng/jin-cheng-chi-pool.md","ref":"primary/jin-cheng/jin-cheng-chi-pool.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex@0.1.8","-sharing","-lunr","-search","search-plus","prism","-highlight","splitter","spoiler","expandable-chapters","book-summary-scroll-position-saver"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"Python"}},"spoiler":{},"book-summary-scroll-position-saver":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"isShowTocTitleIcon":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-3-16-148410-0","variables":{},"title":"我的第一本電子書","language":"zh-tw","links":{"sidebar":{"Home":"http://dinson.win"}},"gitbook":"*","description":"用 GitBook 制作的第一本電子書！","direction":"ltr"},"file":{"path":"primary/jin-cheng/jin-cheng-jian-tong-4fe1-queue.md","mtime":"2017-06-18T15:13:49.344Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-18T15:23:29.617Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-spoiler/spoiler.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
